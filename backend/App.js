@@ -1,8 +1,34 @@
 // Serveur
 const express = require('express')
+const cors = require('cors');
 const app = express()
 
 require('dotenv').config() 
+
+
+
+// Options de configuration CORS
+const corsOptions = {
+  origin: 'https://mon-vieux-grimoire-site-mga3.vercel.app/', // Autoriser uniquement cette origine
+  methods: 'GET,POST', // Autoriser uniquement les méthodes GET et POST
+  allowedHeaders: 'Content-Type,Authorization', // Autoriser uniquement ces en-têtes
+};
+
+// Utiliser le middleware cors avec des options spécifiques
+app.use(cors(corsOptions));
+
+app.get('/api/data', (req, res) => {
+  res.json({ data: 'Some data' });
+});
+
+app.listen(3000, () => {
+  console.log('Server is running on port 3000');
+});
+
+
+
+
+
 
 // Middleware pour parser les requêtes JSON et URL encodées
 app.use(express.json())
