@@ -9,7 +9,7 @@ require('dotenv').config()
 
 // Options de configuration CORS
 const corsOptions = {
-  origin: 'https://mon-vieux-grimoire-site-mga3.vercel.app/', // Autoriser uniquement cette origine
+  origin: 'https://mon-vieux-grimoire-site-mga3.vercel.app', // Autoriser uniquement cette origine
   methods: 'GET,POST', // Autoriser uniquement les méthodes GET et POST
   allowedHeaders: 'Content-Type,Authorization', // Autoriser uniquement ces en-têtes
 };
